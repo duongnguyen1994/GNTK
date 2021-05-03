@@ -13,11 +13,13 @@ namespace GNTK.Domain.Entities
         [MaxLength(450)]
         public string BookingId { get; set; }
         [Required]
-        [MaxLength(100)]
-        public string PickedUpLocation { get; set; }
+        public decimal PickedUpLatitude{ get; set; }
         [Required]
-        [MaxLength(100)]
-        public string DropedOffLocation { get; set; }
+        public decimal PickedUpLongtitude { get; set; }
+        [Required]
+        public decimal DropedOffLatitude { get; set; }
+        [Required]
+        public decimal DropedOffLongtitude{ get; set; }
         [Required]
         public Decimal Distance { get; set; }
         [Required]
@@ -36,5 +38,6 @@ namespace GNTK.Domain.Entities
         [ForeignKey("Discount")]
         public string DiscountId { get; set; }
         public virtual Discount Discount { get; set; }
+        public bool IsCancel { get; set; }
     }
 }
